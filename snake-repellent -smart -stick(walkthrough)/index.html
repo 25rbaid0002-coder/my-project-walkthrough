@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Repellent Smart Stick - System Ecosystem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0b111e] text-slate-100 font-sans min-h-screen">
+
+    <header class="bg-[#0f172a] border-b border-slate-800 px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 shadow-xl">
+        <div class="flex items-center gap-3">
+            <div class="bg-emerald-500/10 border border-emerald-500/30 p-2 rounded-lg text-emerald-400">
+                <i class="fa-solid fa-microchip text-xl"></i>
+            </div>
+            <div>
+                <h1 class="text-xl font-bold tracking-wider text-slate-100 uppercase flex items-center gap-2">
+                    Snake Repellent Smart Stick <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-mono font-normal normal-case tracking-normal">System Ecosystem</span>
+                </h1>
+            </div>
+        </div>
+        <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-lg text-xs font-mono space-y-1 w-full md:w-auto min-w-[320px]">
+            <div class="flex justify-between"><span class="text-blue-400">Student:</span> <span>Swasthika Battacharya</span></div>
+            <div class="flex justify-between"><span class="text-blue-400">Roll No:</span> <span>25RBAID0002</span></div>
+            <div class="flex justify-between"><span class="text-blue-400">Course:</span> <span class="text-right text-[11px]">CSE - AI & Data Science</span></div>
+            <div class="flex justify-between text-slate-400 border-t border-slate-800/60 pt-1 mt-1"><span>Mentor: Srinivas Rao Sir</span> <span>Guide: Sekhar Sir</span></div>
+        </div>
+    </header>
+
+    <main class="max-w-[1600px] mx-auto p-6 grid grid-cols-1 xl:grid-cols-4 gap-6">
+        
+        <div class="bg-[#111827] border border-slate-800/80 rounded-xl p-5 flex flex-col gap-4 shadow-lg">
+            <h2 class="text-sm font-semibold tracking-wider text-slate-400 uppercase flex items-center gap-2 border-b border-slate-800 pb-3">
+                <i class="fa-solid fa-list-check text-emerald-400"></i> Execution Steps
+            </h2>
+            <div class="flex flex-col gap-3 flex-grow justify-start">
+                <div id="step-1" class="step-card active-step p-3.5 rounded-xl border flex gap-3 transition-all duration-300">
+                    <div class="step-num font-mono">1</div>
+                    <div>
+                        <h3 class="text-sm font-bold">Phase I: Continuous Scanning</h3>
+                        <p class="text-xs text-slate-400 mt-1">ESP32-CAM & IR Night Vision monitoring actively in network dead zones.</p>
+                    </div>
+                </div>
+                <div id="step-2" class="step-card pending-step p-3.5 rounded-xl border flex gap-3 transition-all duration-300">
+                    <div class="step-num font-mono">2</div>
+                    <div>
+                        <h3 class="text-sm font-bold">Phase II: Threat Detection</h3>
+                        <p class="text-xs text-slate-400 mt-1">IR Proximity triggers and Edge AI confirms snake presence pattern anomalies.</p>
+                    </div>
+                </div>
+                <div id="step-3" class="step-card pending-step p-3.5 rounded-xl border flex gap-3 transition-all duration-300">
+                    <div class="step-num font-mono">3</div>
+                    <div>
+                        <h3 class="text-sm font-bold">Phase III: Mechanical Repellent</h3>
+                        <p class="text-xs text-slate-400 mt-1">Vibration Motor triggers mechanical kinetic waves to detour threats away safely.</p>
+                    </div>
+                </div>
+                <div id="step-4" class="step-card pending-step p-3.5 rounded-xl border flex gap-3 transition-all duration-300">
+                    <div class="step-num font-mono">4</div>
+                    <div>
+                        <h3 class="text-sm font-bold">Phase IV: SOS Broadcast</h3>
+                        <p class="text-xs text-slate-400 mt-1">Threat holds ground. Manual override button activates immediate off-grid family alert.</p>
+                    </div>
+                </div>
+                <div id="step-5" class="step-card pending-step p-3.5 rounded-xl border flex gap-3 transition-all duration-300">
+                    <div class="step-num font-mono">5</div>
+                    <div>
+                        <h3 class="text-sm font-bold">Phase V: Farmhouse Alert</h3>
+                        <p class="text-xs text-slate-400 mt-1">Receiver base unit map rendering updates with accurate target GPS locks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="xl:col-span-3 flex flex-col gap-6">
+            
+            <div class="bg-[#111827] border border-slate-800/80 rounded-xl overflow-hidden shadow-2xl relative flex flex-col">
+                <div class="bg-slate-900/60 px-4 py-3 border-b border-slate-800 flex justify-between items-center z-10">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span id="canvasHeaderPhase" class="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400">Phase I: Active Scanning</span>
+                        <span class="text-xs text-slate-500 font-mono px-2">|</span>
+                        <span class="text-xs text-red-400 bg-red-950/40 px-2 py-0.5 rounded border border-red-900/30 font-mono">Offline Environment Zone</span>
+                    </div>
+                    <div id="sosButtonContainer" class="hidden">
+                        <button onclick="sendFamilyAlertPacket()" class="sos-glow bg-red-600 hover:bg-red-500 text-white font-bold px-4 py-1.5 rounded-lg text-xs uppercase tracking-wider flex items-center gap-2 transition active:scale-95">
+                            <i class="fa-solid fa-tower-broadcast animate-bounce"></i> SOS Alert to Family (Send)
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-[#070b12] h-[340px] relative w-full flex items-center justify-center overflow-hidden p-6">
+                    
+                    <div class="w-full h-full max-w-4xl flex items-center justify-between relative">
+                        
+                        <div id="nodeStick" class="flex flex-col items-center gap-2 relative z-10 transition-all duration-500">
+                            <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center text-xl text-slate-400 relative">
+                                <i id="stickMainIcon" class="fa-solid fa-user-ninja"></i>
+                                <div id="visionCone" class="absolute left-full top-1/2 -translate-y-1/2 w-48 h-32 bg-gradient-to-r from-emerald-500/15 to-transparent clip-cone origin-left transform scale-x-0 transition-transform duration-500"></div>
+                                <div id="vibrationRings" class="absolute inset-0 rounded-full border border-yellow-500/40 hidden"></div>
+                            </div>
+                            <span class="text-[11px] font-mono text-slate-400 font-bold tracking-wide">Smart Stick Unit</span>
+                        </div>
+
+                        <div id="nodeThreat" class="absolute inset-0 m-auto w-16 h-16 flex flex-col items-center justify-center gap-1 opacity-0 scale-75 transition-all duration-700 z-10">
+                            <div class="w-11 h-11 rounded-full bg-amber-950/60 border-2 border-amber-500 flex items-center justify-center text-amber-500 shadow-lg shadow-amber-900/20">
+                                <i class="fa-solid fa-worm animate-pulse text-lg"></i>
+                            </div>
+                            <span class="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wide whitespace-nowrap">Detected Target</span>
+                        </div>
+
+                        <div id="nodeBase" class="flex flex-col items-center gap-2 relative z-10 opacity-40 transition-all duration-500">
+                            <div id="baseCircle" class="w-14 h-14 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center text-xl text-slate-400 relative">
+                                <i class="fa-solid fa-tower-cell"></i>
+                                <div id="rfNetworkPulse" class="absolute inset-[-15px] border border-blue-500/20 rounded-full radar-pulse hidden"></div>
+                            </div>
+                            <span class="text-[11px] font-mono text-slate-400 font-bold tracking-wide">Base Receiver Node</span>
+                        </div>
+
+                    </div>
+
+                    <div id="mapCoordinatesCard" class="absolute inset-0 bg-slate-950/90 hidden flex-col items-center justify-center text-center p-6 transition-all duration-500 z-20">
+                        <div class="bg-slate-900 border border-blue-900/50 rounded-xl p-5 max-w-sm w-full shadow-2xl flex flex-col items-center gap-3 animate-fade-in">
+                            <div class="flex gap-4 text-3xl mb-1">
+                                <i class="fa-solid fa-mobile-screen text-blue-400"></i>
+                                <i class="fa-solid fa-map-location-dot text-emerald-400 animate-bounce"></i>
+                            </div>
+                            <h3 class="text-base font-bold text-emerald-400 tracking-wide uppercase">Recovery Coordinates Locked</h3>
+                            <p class="text-xs text-slate-300 leading-relaxed">Emergency data packets successfully resolved. Family mapping application alert deployed successfully.</p>
+                            <div class="w-full bg-slate-950 border border-slate-800 rounded-lg py-2 px-4 mt-1">
+                                <span class="text-xs font-mono font-bold text-red-400 flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-location-dot animate-pulse"></i> Lat: 17.3850° N, Lon: 78.4867° E
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bg-slate-900/40 border-t border-slate-800/80 px-4 py-2.5 flex justify-between items-center font-mono text-[11px] text-slate-400">
+                    <div class="flex items-center gap-1.5"><i class="fa-solid fa-wave-square text-blue-400"></i> <span id="footerNetworkStats">LoRa Network Topology Coverage: RF Direct Up to 10km Link Space</span></div>
+                    <div class="flex items-center gap-1.5"><i class="fa-solid fa-battery-three-quarters text-yellow-500"></i> Battery Cell: 3.7V Lithium–Polymer</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-[#111827] border border-slate-800/80 rounded-xl p-5 flex flex-col gap-4 shadow-lg justify-between">
+                    <div>
+                        <h2 class="text-xs font-semibold tracking-wider text-slate-400 uppercase flex items-center gap-2 border-b border-slate-800 pb-2 mb-3">
+                            <i class="fa-solid fa-terminal text-blue-400"></i> System Console Logs
+                        </h2>
+                        <div id="consoleTerminal" class="bg-slate-950 border border-slate-800/60 rounded-lg p-3 font-mono text-[11px] text-slate-400 h-28 overflow-y-auto space-y-1.5">
+                            <p class="text-slate-500">> Base models standing by in structural idle state.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 pt-2">
+                        <button id="resetBtn" onclick="resetPresentationModel()" class="flex-1 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs font-bold font-mono py-2 rounded-lg transition active:scale-95 flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-arrow-rotate-left"></i> Reset Model
+                        </button>
+                        <button id="autoplayBtn" onclick="runEcosystemWalkthrough()" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold font-mono py-2 rounded-lg transition active:scale-95 flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-900/20">
+                            <i class="fa-solid fa-play"></i> Autoplay
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-[#111827] border border-slate-800/80 rounded-xl p-5 shadow-lg">
+                    <h2 class="text-xs font-semibold tracking-wider text-slate-400 uppercase flex items-center gap-2 border-b border-slate-800 pb-2 mb-3">
+                        <i class="fa-solid fa-gauge-high text-blue-400"></i> Local Hardware Telemetry
+                    </h2>
+                    <div class="space-y-2.5 font-mono text-[11px]">
+                        <div class="flex justify-between items-center bg-slate-950/40 p-1.5 px-3 rounded border border-slate-800/40">
+                            <span class="text-slate-400"><i class="fa-solid fa-camera mr-1.5"></i> ESP32-CAM Core</span>
+                            <span id="telCam" class="text-slate-500 font-bold">STANDBY</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-slate-950/40 p-1.5 px-3 rounded border border-slate-800/40">
+                            <span class="text-slate-400"><i class="fa-solid fa-shuttle-space mr-1.5"></i> ERM Vibration Motor</span>
+                            <span id="telMotor" class="text-slate-500 font-bold">OFF (Idle Vector)</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-slate-950/40 p-1.5 px-3 rounded border border-slate-800/40">
+                            <span class="text-slate-400"><i class="fa-solid fa-tower-broadcast mr-1.5"></i> LoRa RF Transceiver</span>
+                            <span id="telLora" class="text-slate-500 font-bold">STANDBY</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-slate-950/40 p-1.5 px-3 rounded border border-slate-800/40">
+                            <span class="text-slate-400"><i class="fa-solid fa-location-crosshairs mr-1.5"></i> GPS String Parser</span>
+                            <span id="telGps" class="text-slate-500 font-bold">UNLOCKED</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-[#111827] border border-slate-800/80 rounded-xl p-5 shadow-lg flex flex-col">
+                    <h2 class="text-xs font-semibold tracking-wider text-slate-400 uppercase flex items-center gap-2 border-b border-slate-800 pb-2 mb-3">
+                        <i class="fa-solid fa-chart-network text-blue-400"></i> Hub Output Visual Dashboard
+                    </h2>
+                    <div class="bg-slate-950/50 border border-slate-800/60 rounded-xl flex-grow flex flex-col items-center justify-center p-4 text-center">
+                        <div id="hubStatusIcon" class="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 text-slate-600 flex items-center justify-center mb-2">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h4 id="hubStatusTitle" class="text-xs font-bold text-slate-400 tracking-wide">Data Pipeline Nominal</h4>
+                        <p id="hubStatusDesc" class="text-[10px] text-slate-500 font-mono mt-1 max-w-[200px]">Ecosystem checks active. Monitoring radio link status fields.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
