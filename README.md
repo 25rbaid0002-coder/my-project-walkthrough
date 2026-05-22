@@ -1,7 +1,5 @@
 # 🐍 Snake Repellent Smart Stick 
 
-🚀 **An Autonomous Off-Grid Safety Framework & Digital Twin Simulation for Smart Agriculture**
-
 ---
 
 ## 📌 Project Overview
