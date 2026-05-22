@@ -31,20 +31,19 @@ __________________________________
 
 ## PROPOSED SOLUTION 
 __________________________________________
-The proposed solution is the Snake Repellent Smart Stick , a handheld safety device specially designed for farmers. When the stick is switched ON, it give vibration  that travel on the ground and scare the reptiles animals like snakes. 
-Snakes sense these vibration as danger and naturally move away from the area . The stick also includes an LED light to help farmers see clearly at night. making the device suitable for rural areas. This solution is safe, easy to use, and does not harm snakes or the environment.
+The proposed solution is the Snake Repellent Smart Stick , a handheld safety device specially designed for farmers. When the stick is switched ON, it give vibration  that travel on the ground and scare the reptiles animals like snakes. 
+Snakes sense these vibration as danger and naturally move away from the area . The stick also includes an LED light to help farmers see clearly at night.making the device suitable for rural areas. This solution is safe, easy to use, and does not harm snakes or the environment.
 
 ---
 ## Hardware components 
-*panic button (sos alert)
-*GPS neo-6m(location)
-*loraSX1262
-(communication)
-*battery(power supply)
-*ERM motor(vibration)
-*IR LED(night illumination)
-*ESP32 camera(main microcontroller and capture image 
-*AI module(detection)
+panic button (sos alert)
+GPS neo-6m(location)
+loraSX1262(communication)
+battery(power supply)
+ERM motor(vibration)
+IR LED(night illumination)
+ESP32 camera(main microcontroller and capture image 
+AI module(detection)
 
 ---
 
