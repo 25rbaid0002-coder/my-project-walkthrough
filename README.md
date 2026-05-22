@@ -37,12 +37,19 @@ Snakes sense these vibration as danger and naturally move away from the area . T
 ---
 ## Hardware components 
 panic button (sos alert)
+
 GPS neo-6m(location)
+
 loraSX1262(communication)
+
 battery(power supply)
+
 ERM motor(vibration)
+
 IR LED(night illumination)
+
 ESP32 camera(main microcontroller and capture image 
+
 AI module(detection)
 
 ---
