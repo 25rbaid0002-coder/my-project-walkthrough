@@ -1,4 +1,4 @@
-<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/15cc2b67-056c-4d38-b2c2-d7e7d89c5cc5" /># 🐍 Snake Repellent Smart Stick - System Ecosystem Walkthrough
+# 🐍 Snake Repellent Smart Stick 
 
 🚀 **An Autonomous Off-Grid Safety Framework & Digital Twin Simulation for Smart Agriculture**
 
